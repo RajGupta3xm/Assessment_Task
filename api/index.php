@@ -1,8 +1,16 @@
 <?php
-// api/index.php ke andar shuruat mein ye add karein
-mkdir('/tmp/storage/framework/views', 0755, true);
-mkdir('/tmp/storage/framework/cache', 0755, true);
-mkdir('/tmp/storage/framework/sessions', 0755, true);
-mkdir('/tmp/storage/bootstrap/cache', 0755, true);
+// Folder banane se pehle check karein ki wo exist karta hai ya nahi
+$storageFolders = [
+    '/tmp/storage/framework/views',
+    '/tmp/storage/framework/cache',
+    '/tmp/storage/framework/sessions',
+    '/tmp/storage/bootstrap/cache',
+];
+
+foreach ($storageFolders as $folder) {
+    if (!is_dir($folder)) {
+        mkdir($folder, 0755, true);
+    }
+}
 
 require __DIR__ . '/../public/index.php';
