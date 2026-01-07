@@ -1,6 +1,8 @@
 <?php
-// Isse error reporting on ho jayegi taaki logs mein asli error dikhe
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+// api/index.php ke andar shuruat mein ye add karein
+mkdir('/tmp/storage/framework/views', 0755, true);
+mkdir('/tmp/storage/framework/cache', 0755, true);
+mkdir('/tmp/storage/framework/sessions', 0755, true);
+mkdir('/tmp/storage/bootstrap/cache', 0755, true);
 
 require __DIR__ . '/../public/index.php';
