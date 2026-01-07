@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Admin Panel - @yield('title','Dashboard')</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+     @vite(['resources/js/app.js'])
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -31,6 +33,22 @@
                     <a href="{{ route('admin.dashboard') }}" class="nav-link">Dashboard</a>
                 </li>
                
+            </ul>
+             <ul class="nav flex-column gap-2">
+               
+                <li class="nav-item">
+                    <a href="{{ route('admin.categories.index') }}" class="nav-link">Categories</a>
+                </li>
+            </ul>
+             <ul class="nav flex-column gap-2">
+               
+                <li class="nav-item">
+                    <a href="{{ route('admin.products.index') }}" class="nav-link">Products</a>
+                </li>
+            </ul>
+             <ul class="nav flex-column gap-2">
+               
+              
             </ul>
         </aside>
 
