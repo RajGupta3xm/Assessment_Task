@@ -30,5 +30,10 @@ class AppServiceProvider extends ServiceProvider
     
      Event::listen(Login::class, [MarkUserOnline::class, 'handle']);
     Event::listen(Logout::class, [MarkUserOffline::class, 'handle']);
+
+    if (app()->environment('production')) {
+        \URL::forceScheme('https');
+    }
 }
 }
+
